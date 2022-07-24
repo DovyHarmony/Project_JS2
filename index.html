@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const employees = [
+        {
+          id: 1,
+          name: "Sunia",
+          age: 27,
+          profession: "Teacher",
+          salary: 47000,
+          phone: +23486543456,
+        },
+        {
+          id: 2,
+          name: "Kelly",
+          age: 27,
+          profession: "Analyst",
+          salary: 76800,
+          phone: +4987676578,
+        },
+        {
+          id: 3,
+          name: "Mulah ",
+          age: 20,
+          profession: "Nurse",
+          salary: 45000,
+          phone: +4567898765,
+        },
+        {
+          id: 4,
+          name: "Chioma",
+          age: 29,
+          profession: "Doctor",
+          salary: 87000,
+          phone: +4817652891,
+        },
+        {
+          id: 5,
+          name: "Arinze",
+          age: 27,
+          profession: "Full Stack Developer",
+          salary: 76000,
+          phone: +4917862813,
+        },
+      ];
+      let analyst = employees.filter((employee) =>
+        employee.profession.includes("Analyst")
+      );
+      console.log(analyst);
+      let data = employees.filter((employee) => employee.age < 30);
+      console.log(data);
+
+      let ageSalary = employees.filter(
+        (employee) => employee.age < 30 && employee.salary > 80000
+      );
+      console.log(ageSalary);
+
+      let doctor = employees.filter((employee) =>
+        employee.profession.includes("Doctor")
+      );
+      console.log(doctor);
+
+      let filteredEmployees = employees.filter((employee) => {
+        if (employee.profession.includes("Doctor") && employee.salary < 97000) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+
+      if (filteredEmployees.length === 0) {
+        console.log("Not found.");
+      } else {
+        console.log(filteredEmployees);
+      }
+      let employeeId = employees.filter((employee) => employee.id === 1);
+      console.log(employeeId);
+    </script>
+  </body>
+</html>
